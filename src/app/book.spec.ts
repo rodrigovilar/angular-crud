@@ -8,5 +8,6 @@ describe('Book', () => {
     let book = new Book('ng-book 2', 'Nate Murray');
     expect(book.name).toEqual('ng-book 2');
     expect(book.author).toEqual('Nate Murray');
+    expect(book.id).toBeUndefined();
   });
 });
