@@ -1,11 +1,11 @@
 import { browser, element, by } from 'protractor';
 
 export class CrudAppPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateToBookListing() {
+    return browser.get('/books');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getHeaderText() {
+    return element(by.css(`h1`)).getText();
   }
 }

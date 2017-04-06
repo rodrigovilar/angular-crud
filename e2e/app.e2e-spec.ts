@@ -7,8 +7,15 @@ describe('crud-app App', () => {
     page = new CrudAppPage();
   });
 
-  it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+  it('should provide CRUD routes', () => {
+    page.navigateToBookListing();
+    expect(page.getHeaderText()).toContain(`Books`);
+
+    page.clickLink(`New Book`);
+    expect(page.getHeaderText()).toContain(`New Book`);
+
+    page.clickLink(`Back`);
+    expect(page.getHeaderText()).toContain(`Books`);
   });
+
 });
