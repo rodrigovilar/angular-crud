@@ -1,13 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import {APP_BASE_HREF} from '@angular/common';
+
+import { BookService } from './book/book.service';
 
 import { AppComponent } from './app.component';
+import { routes } from './routes';
+import { ListBooksComponent } from './book/list-books/list-books.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ListBooksComponent
       ],
+      imports: [RouterModule.forRoot(routes)],
+      providers: [
+        {provide: APP_BASE_HREF, useValue : '/' },
+        BookService
+      ]
     }).compileComponents();
   }));
 

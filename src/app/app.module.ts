@@ -3,18 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-const routes: Routes = [
-  { path: 'books', component: ListBooksComponent },
-  { path: 'books/new', component: NewBookComponent }
-];
+import { BookService } from './book/book.service';
+import { ListBooksComponent } from './book/list-books/list-books.component';
+
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListBooksComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,7 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

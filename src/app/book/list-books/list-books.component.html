@@ -1,0 +1,25 @@
+<p>
+  list-books works!
+</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th id="nameHeader">Name</th>
+      <th id="authorHeader">Author</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let book of books">
+      <td>{{book.name}}</td>
+      <td>{{book.author}}</td>
+      <td><a [routerLink]="['/books', book.author]">Show</a></td>
+      <td><a [routerLink]="['/books', book.author, 'edit']">Edit</a></td>
+      <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" [routerLink]="['/books', book.author]">
+        Destroy</a></td>
+    </tr>
+  </tbody>
+</table>
