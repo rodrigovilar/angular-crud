@@ -7,15 +7,21 @@ import { BookService } from './book/book.service';
 import { AppComponent } from './app.component';
 import { routes } from './routes';
 import { ListBooksComponent } from './book/list-books/list-books.component';
+import { NewBookComponent } from './book/new-book/new-book.component';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        ListBooksComponent
+        ListBooksComponent,
+        NewBookComponent
       ],
-      imports: [RouterModule.forRoot(routes)],
+      imports: [
+        RouterModule.forRoot(routes),
+        FormsModule
+      ],
       providers: [
         {provide: APP_BASE_HREF, useValue : '/' },
         BookService

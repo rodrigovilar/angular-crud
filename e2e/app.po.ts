@@ -1,11 +1,10 @@
 import { browser, element, by } from 'protractor';
+import {AbstractPage} from  './abstract.po';
 
-export class CrudAppPage {
-  navigateToBookListing() {
-    return browser.get('/books');
-  }
+export class CrudAppPage extends AbstractPage {
 
   getHeaderText() {
     return element(by.css(`h1`)).getText();
   }
+
 }

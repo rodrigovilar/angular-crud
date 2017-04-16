@@ -11,11 +11,13 @@ import { BookService } from './book/book.service';
 import { ListBooksComponent } from './book/list-books/list-books.component';
 
 import { routes } from './routes';
+import { NewBookComponent } from './book/new-book/new-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListBooksComponent
+    ListBooksComponent,
+    NewBookComponent
   ],
   imports: [
     BrowserModule,
