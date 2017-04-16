@@ -13,6 +13,8 @@ export class BookService {
   books: Book[] = [];
 
   constructor() {
+//    this.add(new Book('Name 1', 'Author 1'));
+//    this.add(new Book('Name 2', 'Author 2'));
   }
 
   // Simulate POST /books
