@@ -4,7 +4,7 @@ import { CrudAppPage } from '../app.po';
 import { BookPage } from './book.po';
 import {browser} from 'protractor';
 
-describe('crud-app App', () => {
+describe('Book', () => {
   let page: BookPage;
 
   beforeEach(() => {

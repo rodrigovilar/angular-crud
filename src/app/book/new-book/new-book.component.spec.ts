@@ -7,6 +7,7 @@ import { NewBookComponent } from './new-book.component';
 import { ListBooksComponent } from '../list-books/list-books.component';
 import { BookService } from '../book.service';
 import { routes } from '../../routes';
+import {Book} from "../book";
 
 describe('NewBookComponent', () => {
   let component: NewBookComponent;
@@ -37,7 +38,10 @@ describe('NewBookComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
-
-
+  it('should render an empty form', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('#book_name').value).toBe('', ' Book name input value should be empty');
+    expect(compiled.querySelector('#book_author').value).toBe('', ' Book author input value should be empty');
+    expect(compiled.querySelector('#create_book_button').textContent).toContain('Create Book');
+  });
 });
