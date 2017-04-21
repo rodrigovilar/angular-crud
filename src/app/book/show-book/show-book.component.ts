@@ -21,17 +21,11 @@ export class ShowBookComponent implements OnInit {
 
   ngOnInit() {
     this.route.params
-      .switchMap((params: Params) => this.mapIdParam(+params['id']))
-      .subscribe(
-        (book: Book) => {
-          this.book = book;
-        });
+      .switchMap( (params: Params) => this.loadBook(+params['id']) )
+      .subscribe( (book: Book) => this.book = book );
   }
 
-  mapIdParam(id: number): Promise<Book> {
-    return new Promise((resolve) => {
-      const book: Book = this.bookService.getById(id);
-      resolve(book);
-    });
+  loadBook(id: number): Promise<Book> {
+    return new Promise( (resolve) => resolve(this.bookService.getById(id)) );
   }
 }
