@@ -1,0 +1,18 @@
+<p>
+  show-book works!
+</p>
+
+<div *ngIf="book">
+  <p>
+    <strong>Name:</strong>
+    {{book.name}}
+  </p>
+
+  <p>
+    <strong>Author:</strong>
+    {{book.author}}
+  </p>
+  <a [routerLink]="['/books', book.id, 'edit']">Edit</a>
+  |
+  <a [routerLink]="['/books']">Back</a>
+</div>

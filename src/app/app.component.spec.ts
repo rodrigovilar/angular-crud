@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { routes } from './routes';
 import { ListBooksComponent } from './book/list-books/list-books.component';
 import { NewBookComponent } from './book/new-book/new-book.component';
+import { ShowBookComponent } from './book/show-book/show-book.component';
 import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         ListBooksComponent,
-        NewBookComponent
+        NewBookComponent,
+        ShowBookComponent
       ],
       imports: [
         RouterModule.forRoot(routes),

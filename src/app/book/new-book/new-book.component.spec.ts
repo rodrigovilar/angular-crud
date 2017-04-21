@@ -5,9 +5,9 @@ import { FormsModule } from '@angular/forms';
 
 import { NewBookComponent } from './new-book.component';
 import { ListBooksComponent } from '../list-books/list-books.component';
+import { ShowBookComponent } from '../show-book/show-book.component';
 import { BookService } from '../book.service';
 import { routes } from '../../routes';
-import {Book} from "../book";
 
 describe('NewBookComponent', () => {
   let component: NewBookComponent;
@@ -15,7 +15,11 @@ describe('NewBookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewBookComponent, ListBooksComponent ],
+      declarations: [
+        NewBookComponent,
+        ListBooksComponent,
+        ShowBookComponent
+      ],
       imports: [
         RouterModule.forRoot(routes),
         FormsModule

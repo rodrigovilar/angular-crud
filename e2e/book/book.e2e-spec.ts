@@ -22,4 +22,13 @@ describe('Book', () => {
     page.checkLine(1, 'Book name 1', 'Author 1');
   });
 
+  it('should click, show a book and go back to listing', () => {
+    page.show(1);
+    page.checkShow('Book name 1', 'Author 1');
+    page.clickLink(`Back`);
+
+    expect(page.getSubHeaderText()).toContain(`list-books works!`);
+    page.checkLine(1, 'Book name 1', 'Author 1');
+  });
+
 });

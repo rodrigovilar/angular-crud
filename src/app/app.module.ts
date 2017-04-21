@@ -12,12 +12,14 @@ import { ListBooksComponent } from './book/list-books/list-books.component';
 
 import { routes } from './routes';
 import { NewBookComponent } from './book/new-book/new-book.component';
+import { ShowBookComponent } from './book/show-book/show-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListBooksComponent,
-    NewBookComponent
+    NewBookComponent,
+    ShowBookComponent
   ],
   imports: [
     BrowserModule,
