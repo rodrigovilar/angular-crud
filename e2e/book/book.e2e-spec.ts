@@ -18,7 +18,10 @@ describe('Book', () => {
     page.fillForm('Book name 1', 'Author 1');
     page.clickButton(`Create Book`);
 
-    expect(page.getSubHeaderText()).toContain(`list-books works!`);
+    page.checkShow('Book name 1', 'Author 1');
+    page.clickLink(`Back`);
+
+    expect(page.getHeaderText()).toContain(`Books`);
     page.checkLine(1, 'Book name 1', 'Author 1');
   });
 
@@ -26,16 +29,15 @@ describe('Book', () => {
     page.show(1);
     page.checkShow('Book name 1', 'Author 1');
     page.clickLink(`Back`);
-
-    expect(page.getSubHeaderText()).toContain(`list-books works!`);
-    page.checkLine(1, 'Book name 1', 'Author 1');
   });
 
   it ('should edit, show and list a book ', () => {
     page.edit(1);
     page.fillForm('Book name 2', 'Author 2');
     page.clickButton(`Update Book`);
-    expect(page.getSubHeaderText()).toContain(`list-books works!`);
+    page.checkShow('Book name 2', 'Author 2');
+    page.clickLink(`Back`);
+
     page.checkLine(1, 'Book name 2', 'Author 2');
 
     page.show(1);

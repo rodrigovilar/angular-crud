@@ -8,6 +8,7 @@ import { ListBooksComponent } from '../list-books/list-books.component';
 import { ShowBookComponent } from '../show-book/show-book.component';
 import { BookService } from '../book.service';
 import { routes } from '../../routes';
+import { EditBookComponent } from '../edit-book/edit-book.component';
 
 describe('NewBookComponent', () => {
   let component: NewBookComponent;
@@ -18,7 +19,8 @@ describe('NewBookComponent', () => {
       declarations: [
         NewBookComponent,
         ListBooksComponent,
-        ShowBookComponent
+        ShowBookComponent,
+        EditBookComponent
       ],
       imports: [
         RouterModule.forRoot(routes),

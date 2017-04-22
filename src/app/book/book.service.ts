@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 import { Book } from './book';
 
@@ -12,17 +13,18 @@ export class BookService {
   // Placeholder for book's
   books: Book[] = [];
 
-  constructor() {
-//    this.add(new Book('Name 1', 'Author 1'));
-//    this.add(new Book('Name 2', 'Author 2'));
-  }
+  private messageChangedSource = new Subject<string>();
+  public messageChanged$ = this.messageChangedSource.asObservable();
+
+  constructor() {}
 
   // Simulate POST /books
-  add(book: Book) {
+  add(book: Book): Book {
     if (!book.id) {
       book.id = ++this.lastId;
     }
     this.books.push(book);
+    return book;
   }
 
   // Simulate DELETE /books/:id
@@ -51,5 +53,13 @@ export class BookService {
     return this.books
       .filter(todo => todo.id === id)
       .pop();
+  }
+
+  changeMessage(message: string) {
+    this.messageChangedSource.next(message);
+  }
+
+  clearMessage() {
+    this.messageChangedSource.next(null);
   }
 }

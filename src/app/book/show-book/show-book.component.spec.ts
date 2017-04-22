@@ -4,10 +4,11 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { ShowBookComponent } from './show-book.component';
+import { NewBookComponent } from '../new-book/new-book.component';
+import { ListBooksComponent } from '../list-books/list-books.component';
 import { routes } from '../../routes';
 import { BookService } from '../book.service';
-import { ListBooksComponent } from '../list-books/list-books.component';
-import { NewBookComponent } from '../new-book/new-book.component';
+import { EditBookComponent } from '../edit-book/edit-book.component';
 
 describe('ShowBookComponent', () => {
   let component: ShowBookComponent;
@@ -16,9 +17,10 @@ describe('ShowBookComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        ListBooksComponent,
         NewBookComponent,
-        ShowBookComponent
+        ShowBookComponent,
+        ListBooksComponent,
+        EditBookComponent
       ],
       imports: [
         RouterModule.forRoot(routes),

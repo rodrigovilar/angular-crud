@@ -14,8 +14,9 @@ export class NewBookComponent {
   constructor(private router: Router, private bookService: BookService) {}
 
   onSubmit(form: any) {
-    this.bookService.add(new Book(form.name, form.author));
-    this.router.navigate(['/books']);
+    const book = this.bookService.add(new Book(form.name, form.author));
+    this.bookService.changeMessage(`Book was successfully created.`);
+    this.router.navigate(['/books', book.id]);
   }
 
 }

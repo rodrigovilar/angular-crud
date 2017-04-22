@@ -8,8 +8,8 @@ export class AbstractPage {
 
   }
 
-  getSubHeaderText() {
-    return element(by.css(`h2`)).getText();
+  getHeaderText() {
+    return element(by.css(`h1`)).getText();
   }
 
   clickLink(linkText: string) {

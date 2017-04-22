@@ -9,14 +9,13 @@ describe('crud-app App', () => {
 
   it('should provide CRUD routes', () => {
     page.navigateToBookListing();
-    expect(page.getHeaderText()).toContain(`app works!`);
-    expect(page.getSubHeaderText()).toContain(`list-books works!`);
+    expect(page.getHeaderText()).toContain(`Books`);
 
     page.clickLink(`New Book`);
-    expect(page.getSubHeaderText()).toContain(`new-book works!`);
+    expect(page.getHeaderText()).toContain(`New Book`);
 
     page.clickLink(`Back`);
-    expect(page.getSubHeaderText()).toContain(`list-books works!`);
+    expect(page.getHeaderText()).toContain(`Books`);
   });
 
 });

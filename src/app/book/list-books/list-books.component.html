@@ -1,7 +1,6 @@
-<h2>
-  list-books works!
-</h2>
+<div *ngIf="message"><p>{{message}}</p></div>
 
+<h1>Books</h1>
 
 <table>
   <thead>
@@ -16,10 +15,9 @@
     <tr *ngFor="let book of books">
       <td>{{book.name}}</td>
       <td>{{book.author}}</td>
-      <td><a [routerLink]="['/books', book.id]">Show</a></td>
-      <td><a [routerLink]="['/books', book.id, 'edit']">Edit</a></td>
-      <td><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" [routerLink]="['/books', book.id]">
-        Destroy</a></td>
+      <td><a href="#" (click)="show(book.id)">Show</a></td>
+      <td><a href="#" (click)="edit(book.id)">Edit</a></td>
+      <td><a href="#" (click)="destroy(book.id)">Destroy</a></td>
     </tr>
   </tbody>
 </table>
