@@ -13,13 +13,15 @@ import { ListBooksComponent } from './book/list-books/list-books.component';
 import { routes } from './routes';
 import { NewBookComponent } from './book/new-book/new-book.component';
 import { ShowBookComponent } from './book/show-book/show-book.component';
+import { EditBookComponent } from './book/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListBooksComponent,
     NewBookComponent,
-    ShowBookComponent
+    ShowBookComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,

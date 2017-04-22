@@ -1,0 +1,18 @@
+<p>
+  edit-book works!
+</p>
+
+<form *ngIf="book" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div>
+    <label for="book_name">Name: </label>
+    <input type="text" id="book_name" name="name" [ngModel]="book.name"> <br>
+  </div>
+  <div>
+    <label for="book_author">Author: </label>
+    <input type="text" id="book_author" name="author" [ngModel]="book.author"> <br>
+  </div>
+
+  <button type="submit" id="edit_book_button">Update Book</button>
+</form>
+
+<a [routerLink]="['/books']">Back</a>

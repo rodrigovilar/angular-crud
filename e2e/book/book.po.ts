@@ -4,8 +4,13 @@ import {AbstractPage} from '../abstract.po';
 export class BookPage extends AbstractPage {
 
   fillForm(name: string, author: string) {
-    element(by.id('book_name')).sendKeys(name);
-    element(by.id('book_author')).sendKeys(author);
+    const nameField = element(by.id('book_name'));
+    nameField.clear();
+    nameField.sendKeys(name);
+
+    const authorField = element(by.id('book_author'));
+    authorField.clear();
+    authorField.sendKeys(author);
   }
 
   getCellText(line: number, column: number) {
@@ -21,7 +26,19 @@ export class BookPage extends AbstractPage {
   }
 
   show(line: number) {
-    element(by.xpath('//tr[' + line + ']/td[' + 3 + ']/a')).click();
+    this.action(line, 3);
+  }
+
+  edit(line: number) {
+    this.action(line, 4);
+  }
+
+  destroy(line: number) {
+    this.action(line, 5);
+  }
+
+  action(line: number, column: number) {
+    element(by.xpath('//tr[' + line + ']/td[' + column + ']/a')).click();
   }
 
   checkShow(name: string, author: string) {
