@@ -22,4 +22,8 @@ export class AbstractPage {
     browser.waitForAngular('Waiting for Angular after clicking on Button: ' + buttonText);
   }
 
+  confirmDialog() {
+    browser.switchTo().alert().accept();
+  }
+
 }

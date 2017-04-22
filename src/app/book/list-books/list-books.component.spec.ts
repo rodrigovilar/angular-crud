@@ -11,6 +11,7 @@ import { routes } from '../../routes';
 import { NewBookComponent } from '../new-book/new-book.component';
 import { ShowBookComponent } from '../show-book/show-book.component';
 import { EditBookComponent } from '../edit-book/edit-book.component';
+import { AppService } from '../../app.service';
 
 describe('ListBooksComponent', () => {
   let component: ListBooksComponent;
@@ -31,6 +32,7 @@ describe('ListBooksComponent', () => {
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue : '/' },
+        AppService,
         BookService
         ]
     })

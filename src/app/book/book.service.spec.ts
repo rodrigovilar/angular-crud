@@ -2,12 +2,13 @@ import { TestBed, inject } from '@angular/core/testing';
 
 import { BookService } from './book.service';
 import { Book } from './book';
+import { AppService } from '../app.service';
 
 describe('BookService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BookService]
+      providers: [AppService, BookService]
     });
   });
 

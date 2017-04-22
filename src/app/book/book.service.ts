@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 
 import { Book } from './book';
+import { AppService } from '../app.service';
 
 @Injectable()
 export class BookService {
@@ -13,10 +14,7 @@ export class BookService {
   // Placeholder for book's
   books: Book[] = [];
 
-  private messageChangedSource = new Subject<string>();
-  public messageChanged$ = this.messageChangedSource.asObservable();
-
-  constructor() {}
+  constructor(private appService: AppService) {}
 
   // Simulate POST /books
   add(book: Book): Book {
@@ -56,10 +54,11 @@ export class BookService {
   }
 
   changeMessage(message: string) {
-    this.messageChangedSource.next(message);
+    this.appService.changeMessage(message);
   }
 
   clearMessage() {
-    this.messageChangedSource.next(null);
+    this.appService.clearMessage();
   }
+
 }

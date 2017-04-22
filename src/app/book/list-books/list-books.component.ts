@@ -17,8 +17,6 @@ export class ListBooksComponent {
   constructor(
     private router: Router,
     private service: BookService) {
-
-    service.messageChanged$.subscribe( message => this.message = message );
   }
 
   get books(): Book[] {

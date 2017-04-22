@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { AppService } from './app.service';
 import { BookService } from './book/book.service';
 
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ describe('AppComponent', () => {
       ],
       providers: [
         {provide: APP_BASE_HREF, useValue : '/' },
-        BookService
+        BookService,
+        AppService
       ]
     }).compileComponents();
   }));

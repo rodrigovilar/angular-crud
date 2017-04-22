@@ -63,4 +63,9 @@ export class BookPage extends AbstractPage {
   getShowValueText(line: number) {
     return element(by.xpath('//div/p[' + line + ']')).getText();
   }
+
+  getMessageText() {
+    return element(by.id('notificationMessage')).getText();
+  }
+
 }
