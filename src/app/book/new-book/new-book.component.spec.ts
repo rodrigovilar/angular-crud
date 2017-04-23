@@ -50,6 +50,6 @@ describe('NewBookComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('#book_name').value).toBe('', ' Book name input value should be empty');
     expect(compiled.querySelector('#book_author').value).toBe('', ' Book author input value should be empty');
-    expect(compiled.querySelector('#create_book_button').textContent).toContain('Create Book');
+    expect(compiled.querySelector('#create_book_button').value).toContain('Create Book');
   });
 });
