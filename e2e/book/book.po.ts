@@ -57,11 +57,11 @@ export class BookPage extends AbstractPage {
   }
 
   getShowLabelText(line: number) {
-    return element(by.xpath('//div/p[' + line + ']/strong')).getText();
+    return element(by.xpath('//div[@id="showPanel"]/p[' + line + ']/strong')).getText();
   }
 
   getShowValueText(line: number) {
-    return element(by.xpath('//div/p[' + line + ']')).getText();
+    return element(by.xpath('//div[@id="showPanel"]/p[' + line + ']')).getText();
   }
 
   getMessageText() {

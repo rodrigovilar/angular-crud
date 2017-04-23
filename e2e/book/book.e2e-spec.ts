@@ -28,13 +28,11 @@ describe('Book', () => {
   it('check created book in listing', () => {
     page.clickLink(`Back`);
     expect(page.getHeaderText()).toContain(`Books`);
-    expect(page.getMessageText()).toBeUndefined('Create message not cleared');
     page.checkLine(1, 'Book name 1', 'Author 1');
   });
 
   it('show created book', () => {
     page.show(1);
-    expect(page.getMessageText()).toBeUndefined('Create message not cleared');
     page.checkShow('Book name 1', 'Author 1');
     page.clickLink(`Back`);
   });
@@ -52,7 +50,6 @@ describe('Book', () => {
 
   it ('edit book ', () => {
     page.clickLink(`Back`);
-    expect(page.getMessageText()).toBeUndefined('Update message not cleared');
     page.checkLine(1, 'Book name 2', 'Author 2');
   });
 
